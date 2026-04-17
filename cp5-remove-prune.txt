@@ -1,0 +1,30 @@
+=== Comando git worktree remove utilizado ===
+git worktree remove ../wt-feature-a
+
+=== git worktree list ANTES de eliminar el worktree ===
+/home/user/actividad-6-13-git-worktree        a3f1c2e [main]
+/home/user/wt-feature-a                       e5f2d3a [feature-a]
+/home/user/wt-feature-b                       f1a3c7d [feature-b]
+
+=== git worktree list DESPUES de eliminar el worktree ===
+/home/user/actividad-6-13-git-worktree        a3f1c2e [main]
+/home/user/wt-feature-b                       f1a3c7d [feature-b]
+
+=== Diferencia entre remove y prune ===
+
+git worktree remove <ruta>:
+  - Elimina correctamente un worktree: borra el directorio de trabajo
+    y también limpia la referencia interna en .git/worktrees/.
+  - Es el método recomendado y más seguro.
+  - Si el worktree tiene cambios sin commitear, da error (a menos que
+    se use --force para forzar la eliminación).
+  - Ejemplo: git worktree remove ../wt-feature-a
+
+git worktree prune:
+  - Solo limpia las referencias internas obsoletas en .git/worktrees/.
+  - Es útil cuando el directorio de un worktree fue borrado manualmente
+    (sin usar git worktree remove), dejando referencias huerfanas.
+  - NO borra ningún directorio; solo limpia el registro de Git.
+  - Ejemplo de uso: se borra manualmente la carpeta wt-feature-b con
+    'rm -rf ../wt-feature-b', y luego se ejecuta 'git worktree prune'
+    para que Git limpie la referencia que quedaba en .git/worktrees/.
