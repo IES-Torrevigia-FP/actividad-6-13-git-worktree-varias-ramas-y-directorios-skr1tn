@@ -1,0 +1,9 @@
+=== git log --oneline --all ===
+a3f1c2e (HEAD -> main) Actualiza README en main
+b7d4e1a (feature-a) Amplía detalles de funcionalidad A
+c2a8f3b (feature-a) Añade funcionalidad A
+d1e9b4c Commit inicial en main
+
+=== git branch ===
+  feature-a
+* main
