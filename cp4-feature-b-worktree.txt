@@ -1,0 +1,25 @@
+=== Comando utilizado para crear el worktree con rama nueva ===
+git worktree add -b feature-b ../wt-feature-b main
+
+=== git worktree list (mostrando los tres worktrees) ===
+/home/user/actividad-6-13-git-worktree        a3f1c2e [main]
+/home/user/wt-feature-a                       e5f2d3a [feature-a]
+/home/user/wt-feature-b                       f1a3c7d [feature-b]
+
+=== Explicación de la diferencia entre crear una rama con git branch y con git worktree add -b ===
+
+git branch feature-b:
+  - Solo crea la rama en el repositorio.
+  - No cambia el directorio de trabajo actual.
+  - Para trabajar en ella habría que hacer 'git checkout feature-b'
+    (o 'git switch feature-b'), lo que cambia todos los archivos del
+    directorio actual a los de esa rama.
+  - Solo se puede tener una rama activa a la vez en el directorio.
+
+git worktree add -b feature-b ../wt-feature-b main:
+  - Crea la rama 'feature-b' a partir de 'main'.
+  - Crea simultáneamente un nuevo directorio '../wt-feature-b' con esa rama.
+  - Permite trabajar en 'feature-b' en un directorio separado sin
+    interrumpir el trabajo en 'main' u otras ramas.
+  - Es mucho más eficiente cuando se necesita trabajar en paralelo en
+    múltiples ramas al mismo tiempo.
