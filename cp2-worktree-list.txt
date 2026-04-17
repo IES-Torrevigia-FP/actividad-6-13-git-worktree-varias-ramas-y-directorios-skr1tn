@@ -1,0 +1,18 @@
+=== git worktree list ===
+/home/user/actividad-6-13-git-worktree        a3f1c2e [main]
+/home/user/wt-feature-a                       b7d4e1a [feature-a]
+
+=== Explicación de la estructura de directorios ===
+Se tienen dos directorios de trabajo (worktrees) vinculados al mismo repositorio Git:
+
+1. Worktree principal: /home/user/actividad-6-13-git-worktree
+   - Es el directorio original donde se inicializó el repositorio.
+   - Tiene la rama 'main' activa.
+   - Contiene el archivo .git con todo el historial compartido.
+
+2. Worktree secundario: /home/user/wt-feature-a
+   - Fue creado con el comando: git worktree add ../wt-feature-a feature-a
+   - Tiene la rama 'feature-a' activa.
+   - No contiene un .git completo, sino un fichero .git que apunta al repositorio principal.
+   - Permite trabajar en 'feature-a' al mismo tiempo que se trabaja en 'main',
+     sin necesidad de hacer checkout ni stash.
