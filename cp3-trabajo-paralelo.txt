@@ -1,0 +1,31 @@
+=== git worktree list (tras trabajo paralelo) ===
+/home/user/actividad-6-13-git-worktree        a3f1c2e [main]
+/home/user/wt-feature-a                       e5f2d3a [feature-a]
+
+=== git log --oneline --all ===
+a3f1c2e (HEAD -> main) Actualiza README en main
+e5f2d3a (feature-a) Amplía detalles de funcionalidad A
+b7d4e1a (feature-a) Añade funcionalidad A
+c2a8f3b Commit inicial en main
+
+=== Esquema de cambios en cada directorio ===
+
+Directorio: actividad-6-13-git-worktree  (rama: main)
+  - README.md contiene:
+      # Proyecto Worktree
+      Rama main.
+      Cambio independiente en main.
+  - Ultimo commit: "Actualiza README en main"
+
+Directorio: wt-feature-a  (rama: feature-a)
+  - README.md contiene:
+      # Proyecto Worktree
+      Rama main.
+      Funcionalidad A en desarrollo.
+      Detalle técnico de la funcionalidad A.
+  - Ultimo commit: "Amplía detalles de funcionalidad A"
+
+Conclusión:
+Cada worktree trabaja de forma independiente en su propia rama.
+Los commits de una rama no afectan al contenido del otro directorio.
+Ambos directorios comparten el mismo historial Git (.git del repo principal).
